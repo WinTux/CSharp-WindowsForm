@@ -2,6 +2,7 @@ namespace CSharp_WindowsForm
 {
     public partial class Form1 : Form
     {
+        List<string> listaNombres = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +34,26 @@ namespace CSharp_WindowsForm
             }
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listaNombres.Add(txtValorLista.Text);
+            mostrar();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            listaNombres.Remove(txtValorLista.Text);
+            mostrar();
+        }
+        private void mostrar() {
+            txtLista1.Text = "";
+            txtValorLista.Text = "";
+            foreach (string nombre in listaNombres)
+            {
+                txtLista1.Text += nombre + "\n";
+            }
         }
     }
 }
