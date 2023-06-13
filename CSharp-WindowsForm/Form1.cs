@@ -5,6 +5,7 @@ namespace CSharp_WindowsForm
         List<string> listaNombres = new List<string>();
         Stack<string> pilaDepartamentos = new Stack<string>();
         Queue<string> colaClientes = new Queue<string>();
+        Usuario usu;
         public Form1()
         {
             InitializeComponent();
@@ -106,15 +107,50 @@ namespace CSharp_WindowsForm
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Usuario usu = new Usuario(
+            usu = new Usuario(
                 textBox1.Text,
                 textBox2.Text,
                 int.Parse(textBox3.Text),
                 textBox4.Text,
                 textBox5.Text);
-            richTextBox1.Text = usu.ToString();
-            //sobreescribir el método ToString()
-            //pase por valor y referencia
+            richTextBox1.Text = usu + "";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            int original = int.Parse(txtPrimitivaOriginal.Text);
+            int copia = original;
+            copia = 777;
+            txtPrimitivaOriginalMostrar.Text = original + "";
+            txtPrimitivaCopiaMostrar.Text = copia + "";
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //Copiar de Objeto (por referencia)
+            Usuario usuCopia = usu;
+            usuCopia.nombre = "PEPE";
+            usuCopia.email = "pp@pepelandia.es";
+            txtObjetoOriginalMostrar.Text = usu.ToString();
+            txtObjetoCopiaMostrar.Text = usuCopia.ToString();
+
+            //Copiar de Objeto (por valor)
+            Usuario usuCopia2 = new Usuario(usu.nombre, usu.pass, usu.edad, usu.direccion, usu.email);
+
+
+            usuCopia2.nombre = "ANITA";
+            usuCopia2.email = "ani@gmail.com";
+            txtObjetoOriginalMostrar.Text = usu.ToString();
+            txtObjetoCopiaMostrar.Text = usuCopia2.ToString();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form2 segundaVentana = new Form2(this);
+
+            segundaVentana.Show();
+            this.Hide();
+            //segundaVentana.Visible = true;
         }
     }
 
@@ -133,5 +169,24 @@ namespace CSharp_WindowsForm
             direccion = dir;
             this.email = email;
         }
+        public override string ToString()
+        {
+            return "{ 'nombre': " + nombre + ", 'email: '" + email + " }";
+        }
     }
+    public partial class Estudiante
+    {
+        public override string ToString()
+        {
+            return $"Nombre: {Nombre}, Edad: {Edad}, Es egresado: {Egresado}";
+        }
+        public string Estudiar()
+        {
+            return $"Soy {Nombre} y estoy estudiando.";
+        }
+    }
+}
+namespace diferente
+{
+    
 }

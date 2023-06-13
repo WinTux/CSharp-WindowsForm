@@ -63,19 +63,36 @@
             txtValorLista = new TextBox();
             label2 = new Label();
             tabPage3 = new TabPage();
+            groupBox6 = new GroupBox();
+            panel5 = new Panel();
+            txtObjetoCopiaMostrar = new TextBox();
+            label14 = new Label();
+            txtObjetoOriginalMostrar = new TextBox();
+            label15 = new Label();
+            button10 = new Button();
+            panel4 = new Panel();
+            txtPrimitivaCopiaMostrar = new TextBox();
+            label13 = new Label();
+            txtPrimitivaOriginalMostrar = new TextBox();
+            label12 = new Label();
+            txtPrimitivaOriginal = new TextBox();
+            button9 = new Button();
             groupBox5 = new GroupBox();
-            label7 = new Label();
-            textBox1 = new TextBox();
-            label8 = new Label();
-            textBox2 = new TextBox();
-            label9 = new Label();
-            textBox3 = new TextBox();
-            label10 = new Label();
-            textBox4 = new TextBox();
-            label11 = new Label();
-            textBox5 = new TextBox();
-            button8 = new Button();
             richTextBox1 = new RichTextBox();
+            button8 = new Button();
+            textBox5 = new TextBox();
+            label11 = new Label();
+            textBox4 = new TextBox();
+            label10 = new Label();
+            textBox3 = new TextBox();
+            label9 = new Label();
+            textBox2 = new TextBox();
+            label8 = new Label();
+            textBox1 = new TextBox();
+            label7 = new Label();
+            tabPage4 = new TabPage();
+            button11 = new Button();
+            textBox6 = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -87,7 +104,11 @@
             groupBox2.SuspendLayout();
             panel1.SuspendLayout();
             tabPage3.SuspendLayout();
+            groupBox6.SuspendLayout();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
             groupBox5.SuspendLayout();
+            tabPage4.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -95,6 +116,7 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -418,6 +440,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(groupBox6);
             tabPage3.Controls.Add(groupBox5);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
@@ -425,6 +448,133 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Valor-Referencia";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(panel5);
+            groupBox6.Controls.Add(panel4);
+            groupBox6.Location = new Point(197, 11);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(465, 307);
+            groupBox6.TabIndex = 1;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "groupBox6";
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(txtObjetoCopiaMostrar);
+            panel5.Controls.Add(label14);
+            panel5.Controls.Add(txtObjetoOriginalMostrar);
+            panel5.Controls.Add(label15);
+            panel5.Controls.Add(button10);
+            panel5.Location = new Point(32, 182);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(402, 114);
+            panel5.TabIndex = 1;
+            // 
+            // txtObjetoCopiaMostrar
+            // 
+            txtObjetoCopiaMostrar.Location = new Point(185, 59);
+            txtObjetoCopiaMostrar.Name = "txtObjetoCopiaMostrar";
+            txtObjetoCopiaMostrar.Size = new Size(207, 23);
+            txtObjetoCopiaMostrar.TabIndex = 9;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(85, 62);
+            label14.Name = "label14";
+            label14.Size = new Size(96, 15);
+            label14.TabIndex = 8;
+            label14.Text = "Variable copiada:";
+            // 
+            // txtObjetoOriginalMostrar
+            // 
+            txtObjetoOriginalMostrar.Location = new Point(185, 12);
+            txtObjetoOriginalMostrar.Name = "txtObjetoOriginalMostrar";
+            txtObjetoOriginalMostrar.Size = new Size(207, 23);
+            txtObjetoOriginalMostrar.TabIndex = 7;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(85, 15);
+            label15.Name = "label15";
+            label15.Size = new Size(94, 15);
+            label15.TabIndex = 6;
+            label15.Text = "Variable original:";
+            // 
+            // button10
+            // 
+            button10.Location = new Point(3, 58);
+            button10.Name = "button10";
+            button10.Size = new Size(75, 23);
+            button10.TabIndex = 0;
+            button10.Text = "Copiar";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(txtPrimitivaCopiaMostrar);
+            panel4.Controls.Add(label13);
+            panel4.Controls.Add(txtPrimitivaOriginalMostrar);
+            panel4.Controls.Add(label12);
+            panel4.Controls.Add(txtPrimitivaOriginal);
+            panel4.Controls.Add(button9);
+            panel4.Location = new Point(29, 35);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(403, 122);
+            panel4.TabIndex = 0;
+            // 
+            // txtPrimitivaCopiaMostrar
+            // 
+            txtPrimitivaCopiaMostrar.Location = new Point(273, 61);
+            txtPrimitivaCopiaMostrar.Name = "txtPrimitivaCopiaMostrar";
+            txtPrimitivaCopiaMostrar.Size = new Size(100, 23);
+            txtPrimitivaCopiaMostrar.TabIndex = 5;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(161, 64);
+            label13.Name = "label13";
+            label13.Size = new Size(96, 15);
+            label13.TabIndex = 4;
+            label13.Text = "Variable copiada:";
+            // 
+            // txtPrimitivaOriginalMostrar
+            // 
+            txtPrimitivaOriginalMostrar.Location = new Point(273, 14);
+            txtPrimitivaOriginalMostrar.Name = "txtPrimitivaOriginalMostrar";
+            txtPrimitivaOriginalMostrar.Size = new Size(100, 23);
+            txtPrimitivaOriginalMostrar.TabIndex = 3;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(159, 17);
+            label12.Name = "label12";
+            label12.Size = new Size(94, 15);
+            label12.TabIndex = 2;
+            label12.Text = "Variable original:";
+            // 
+            // txtPrimitivaOriginal
+            // 
+            txtPrimitivaOriginal.Location = new Point(15, 14);
+            txtPrimitivaOriginal.Name = "txtPrimitivaOriginal";
+            txtPrimitivaOriginal.Size = new Size(100, 23);
+            txtPrimitivaOriginal.TabIndex = 1;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(15, 60);
+            button9.Name = "button9";
+            button9.Size = new Size(75, 23);
+            button9.TabIndex = 0;
+            button9.Text = "Copiar";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // groupBox5
             // 
@@ -447,85 +597,13 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Usuario:";
             // 
-            // label7
+            // richTextBox1
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(4, 13);
-            label7.Name = "label7";
-            label7.Size = new Size(50, 15);
-            label7.TabIndex = 0;
-            label7.Text = "Usuario:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(60, 10);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 1;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(4, 42);
-            label8.Name = "label8";
-            label8.Size = new Size(60, 15);
-            label8.TabIndex = 0;
-            label8.Text = "Password:";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(60, 39);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 1;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(4, 71);
-            label9.Name = "label9";
-            label9.Size = new Size(36, 15);
-            label9.TabIndex = 0;
-            label9.Text = "Edad:";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(60, 68);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 1;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(4, 100);
-            label10.Name = "label10";
-            label10.Size = new Size(60, 15);
-            label10.TabIndex = 0;
-            label10.Text = "Dirección:";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(60, 97);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 1;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(4, 129);
-            label11.Name = "label11";
-            label11.Size = new Size(39, 15);
-            label11.TabIndex = 0;
-            label11.Text = "email:";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(60, 126);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 1;
+            richTextBox1.Location = new Point(0, 184);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(173, 132);
+            richTextBox1.TabIndex = 3;
+            richTextBox1.Text = "";
             // 
             // button8
             // 
@@ -537,13 +615,113 @@
             button8.UseVisualStyleBackColor = true;
             button8.Click += button8_Click;
             // 
-            // richTextBox1
+            // textBox5
             // 
-            richTextBox1.Location = new Point(0, 184);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(173, 132);
-            richTextBox1.TabIndex = 3;
-            richTextBox1.Text = "";
+            textBox5.Location = new Point(60, 126);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(100, 23);
+            textBox5.TabIndex = 1;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(4, 129);
+            label11.Name = "label11";
+            label11.Size = new Size(39, 15);
+            label11.TabIndex = 0;
+            label11.Text = "email:";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(60, 97);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(100, 23);
+            textBox4.TabIndex = 1;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(4, 100);
+            label10.Name = "label10";
+            label10.Size = new Size(60, 15);
+            label10.TabIndex = 0;
+            label10.Text = "Dirección:";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(60, 68);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(100, 23);
+            textBox3.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(4, 71);
+            label9.Name = "label9";
+            label9.Size = new Size(36, 15);
+            label9.TabIndex = 0;
+            label9.Text = "Edad:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(60, 39);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 1;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(4, 42);
+            label8.Name = "label8";
+            label8.Size = new Size(60, 15);
+            label8.TabIndex = 0;
+            label8.Text = "Password:";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(60, 10);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(4, 13);
+            label7.Name = "label7";
+            label7.Size = new Size(50, 15);
+            label7.TabIndex = 0;
+            label7.Text = "Usuario:";
+            // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(textBox6);
+            tabPage4.Controls.Add(button11);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new Size(676, 329);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Otra ventana";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Location = new Point(308, 148);
+            button11.Name = "button11";
+            button11.Size = new Size(91, 23);
+            button11.TabIndex = 0;
+            button11.Text = "Abrir Form2";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(299, 80);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(100, 23);
+            textBox6.TabIndex = 1;
             // 
             // Form1
             // 
@@ -568,8 +746,15 @@
             groupBox2.PerformLayout();
             panel1.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
+            groupBox6.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -582,7 +767,7 @@
         private Label label1;
         private Label lblRes;
         private TextBox txtNum2;
-        private TextBox txtNum1;
+        public TextBox txtNum1;
         private Button button1;
         private GroupBox groupBox2;
         private Panel panel1;
@@ -623,5 +808,22 @@
         private Label label8;
         private TextBox textBox1;
         private Label label7;
+        private GroupBox groupBox6;
+        private Panel panel5;
+        private Panel panel4;
+        private TextBox txtPrimitivaCopiaMostrar;
+        private Label label13;
+        private TextBox txtPrimitivaOriginalMostrar;
+        private Label label12;
+        private TextBox txtPrimitivaOriginal;
+        private Button button9;
+        private TextBox txtObjetoCopiaMostrar;
+        private Label label14;
+        private TextBox txtObjetoOriginalMostrar;
+        private Label label15;
+        private Button button10;
+        private TabPage tabPage4;
+        private Button button11;
+        private TextBox textBox6;
     }
 }
