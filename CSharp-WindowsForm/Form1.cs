@@ -3,6 +3,8 @@ namespace CSharp_WindowsForm
     public partial class Form1 : Form
     {
         List<string> listaNombres = new List<string>();
+        
+        
         Stack<string> pilaDepartamentos = new Stack<string>();
         Queue<string> colaClientes = new Queue<string>();
         Usuario usu;

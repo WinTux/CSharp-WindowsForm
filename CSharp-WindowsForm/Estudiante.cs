@@ -47,3 +47,26 @@ namespace CSharp_WindowsForm
         }
     }
 }
+
+namespace genericas
+{
+    public class ListaGenerica<T>
+    {
+        private T[] elementos;
+        private int tamanyo, actual;
+        public ListaGenerica(int size)
+        {
+            elementos = new T[tamanyo = size];
+            actual = 0;
+        }
+        public void add(T elem)
+        {
+            if (actual < tamanyo)
+                elementos[actual++] = elem;
+        }
+        public T get(int posicion)
+        {
+            return elementos[posicion];
+        }
+    }
+}
