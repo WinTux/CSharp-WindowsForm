@@ -3,8 +3,8 @@ namespace CSharp_WindowsForm
     public partial class Form1 : Form
     {
         List<string> listaNombres = new List<string>();
-        
-        
+
+
         Stack<string> pilaDepartamentos = new Stack<string>();
         Queue<string> colaClientes = new Queue<string>();
         Usuario usu;
@@ -154,6 +154,38 @@ namespace CSharp_WindowsForm
             this.Hide();
             //segundaVentana.Visible = true;
         }
+
+        private void Clickeado(object o, EventArgs e)
+        {
+            textBox6.Text = "Se hizo clic en el botón Ejemplo 1";
+        }
+
+        private void Presionando_boton_ejemplo_2(object sender, EventArgs e)
+        {
+            textBox6.Text = "Ejemplo 2";
+        }
+
+        private void Movimiento_mouse_en_ejemplo_1(object sender, MouseEventArgs e)
+        {
+            textBox6.Text = textBox6.Text + "MOUSE!!!";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void paint_de_lienzo(object sender, PaintEventArgs e)
+        {
+            
+            Pen boli = new Pen(Color.Red);
+            boli.Width = 3;
+            e.Graphics.DrawLine(boli,new Point(10,10),new Point(70,30));
+            boli.Color = Color.Green;
+            e.Graphics.DrawRectangle(boli, 10, 10, 30, 20);
+            Rectangle rect = new Rectangle();
+            //modificar dinámicamente las figuras (eventos)
+        }
     }
 
     public class Usuario
@@ -190,5 +222,5 @@ namespace CSharp_WindowsForm
 }
 namespace diferente
 {
-    
+
 }

@@ -91,8 +91,12 @@
             textBox1 = new TextBox();
             label7 = new Label();
             tabPage4 = new TabPage();
-            button11 = new Button();
+            groupBox7 = new GroupBox();
+            lienzo = new Panel();
+            button13 = new Button();
+            button12 = new Button();
             textBox6 = new TextBox();
+            button11 = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -109,6 +113,7 @@
             panel4.SuspendLayout();
             groupBox5.SuspendLayout();
             tabPage4.SuspendLayout();
+            groupBox7.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -697,6 +702,9 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(groupBox7);
+            tabPage4.Controls.Add(button13);
+            tabPage4.Controls.Add(button12);
             tabPage4.Controls.Add(textBox6);
             tabPage4.Controls.Add(button11);
             tabPage4.Location = new Point(4, 24);
@@ -706,22 +714,61 @@
             tabPage4.Text = "Otra ventana";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(lienzo);
+            groupBox7.Location = new Point(242, 17);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(414, 293);
+            groupBox7.TabIndex = 4;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Graphics";
+            // 
+            // lienzo
+            // 
+            lienzo.Location = new Point(27, 39);
+            lienzo.Name = "lienzo";
+            lienzo.Size = new Size(356, 221);
+            lienzo.TabIndex = 0;
+            lienzo.Paint += paint_de_lienzo;
+            // 
+            // button13
+            // 
+            button13.Location = new Point(121, 213);
+            button13.Name = "button13";
+            button13.Size = new Size(75, 23);
+            button13.TabIndex = 3;
+            button13.Text = "Ejemplo 2";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += Presionando_boton_ejemplo_2;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(12, 213);
+            button12.Name = "button12";
+            button12.Size = new Size(75, 23);
+            button12.TabIndex = 2;
+            button12.Text = "Ejemplo 1";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += Clickeado;
+            button12.MouseMove += Movimiento_mouse_en_ejemplo_1;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(55, 39);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(100, 23);
+            textBox6.TabIndex = 1;
+            // 
             // button11
             // 
-            button11.Location = new Point(308, 148);
+            button11.Location = new Point(64, 107);
             button11.Name = "button11";
             button11.Size = new Size(91, 23);
             button11.TabIndex = 0;
             button11.Text = "Abrir Form2";
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(299, 80);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 1;
             // 
             // Form1
             // 
@@ -731,6 +778,7 @@
             Controls.Add(tabControl1);
             Name = "Form1";
             Text = "Ventana principal";
+            Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -755,6 +803,7 @@
             groupBox5.PerformLayout();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
+            groupBox7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -825,5 +874,9 @@
         private TabPage tabPage4;
         private Button button11;
         private TextBox textBox6;
+        private Button button12;
+        private Button button13;
+        private GroupBox groupBox7;
+        private Panel lienzo;
     }
 }
