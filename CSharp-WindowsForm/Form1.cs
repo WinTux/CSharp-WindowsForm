@@ -172,19 +172,118 @@ namespace CSharp_WindowsForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
+        Graphics graphics;
+        Pen boligrafo;
+        Point p_ini = new Point(5, 5), p_end = new Point(20, 50);
+        Rectangle rect = new Rectangle(5, 5, 50, 50);
         private void paint_de_lienzo(object sender, PaintEventArgs e)
         {
-            
-            Pen boli = new Pen(Color.Red);
-            boli.Width = 3;
-            e.Graphics.DrawLine(boli,new Point(10,10),new Point(70,30));
-            boli.Color = Color.Green;
-            e.Graphics.DrawRectangle(boli, 10, 10, 30, 20);
-            Rectangle rect = new Rectangle();
-            //modificar dinámicamente las figuras (eventos)
+
+            graphics = lienzo.CreateGraphics();//inicializar el objeto Graphics
+            boligrafo = new Pen(Color.Red, 10.0f);
+            graphics.DrawLine(boligrafo, p_ini, p_end);
+            boligrafo.Color = Color.Pink;
+            graphics.DrawRectangle(boligrafo, rect);
+            //graphics.DrawP
+            textBox6.Text = "REDIBUJADO";
+        }
+
+        private void hacia_arriba(object sender, EventArgs e)
+        {
+            p_ini.Y -= 5;
+            p_end.Y -= 5;
+            lienzo.Invalidate();
+        }
+
+        private void hacia_abajo(object sender, EventArgs e)
+        {
+            p_ini.Y += 5;
+            p_end.Y += 5;
+            lienzo.Invalidate();
+        }
+
+        private void hacia_izq(object sender, EventArgs e)
+        {
+            p_ini.X -= 5;
+            p_end.X -= 5;
+            lienzo.Invalidate();
+        }
+
+        private void hacia_der(object sender, EventArgs e)
+        {
+            p_ini.X += 5;
+            p_end.X += 5;
+            lienzo.Invalidate();
+        }
+
+
+
+        private void tecla_presionada(object sender, KeyEventArgs e)
+        {
+            //saber qué tecla se presionó
+            Console.WriteLine("Presionado");
+            textBox6.Text = e.KeyValue + "";
+            switch (e.KeyData)
+            {
+                case Keys.A:
+                    p_ini.X -= 5;
+                    p_end.X -= 5;
+                    lienzo.Invalidate();
+                    break;
+                case Keys.D:
+                    p_ini.X += 5;
+                    p_end.X += 5;
+                    lienzo.Invalidate();
+                    break;
+                case Keys.W:
+                    p_ini.Y -= 5;
+                    p_end.Y -= 5;
+                    lienzo.Invalidate();
+                    break;
+                case Keys.S:
+                    p_ini.Y += 5;
+                    p_end.Y += 5;
+                    lienzo.Invalidate();
+                    break;
+                default:
+                    lienzo.Invalidate();
+                    break;
+            }
+        }
+
+        private void evento_raton_down(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    rect.X = e.X;
+                    rect.Y = e.Y;
+                    lienzo.Invalidate();
+                    break;
+                case MouseButtons.Right:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void raton_mover(object sender, MouseEventArgs e)
+        {
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    rect.X = e.X;
+                    rect.Y = e.Y;
+                    lienzo.Invalidate();
+                    break;
+                case MouseButtons.Right:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

@@ -92,6 +92,10 @@
             label7 = new Label();
             tabPage4 = new TabPage();
             groupBox7 = new GroupBox();
+            button17 = new Button();
+            button16 = new Button();
+            button15 = new Button();
+            button14 = new Button();
             lienzo = new Panel();
             button13 = new Button();
             button12 = new Button();
@@ -127,6 +131,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(684, 357);
             tabControl1.TabIndex = 0;
+            tabControl1.KeyDown += tecla_presionada;
             // 
             // tabPage1
             // 
@@ -716,6 +721,10 @@
             // 
             // groupBox7
             // 
+            groupBox7.Controls.Add(button17);
+            groupBox7.Controls.Add(button16);
+            groupBox7.Controls.Add(button15);
+            groupBox7.Controls.Add(button14);
             groupBox7.Controls.Add(lienzo);
             groupBox7.Location = new Point(242, 17);
             groupBox7.Name = "groupBox7";
@@ -724,13 +733,55 @@
             groupBox7.TabStop = false;
             groupBox7.Text = "Graphics";
             // 
+            // button17
+            // 
+            button17.Location = new Point(352, 118);
+            button17.Name = "button17";
+            button17.Size = new Size(56, 23);
+            button17.TabIndex = 4;
+            button17.Text = "v";
+            button17.UseVisualStyleBackColor = true;
+            button17.Click += hacia_abajo;
+            // 
+            // button16
+            // 
+            button16.Location = new Point(379, 98);
+            button16.Name = "button16";
+            button16.Size = new Size(29, 23);
+            button16.TabIndex = 3;
+            button16.Text = ">";
+            button16.UseVisualStyleBackColor = true;
+            button16.Click += hacia_der;
+            // 
+            // button15
+            // 
+            button15.Location = new Point(352, 98);
+            button15.Name = "button15";
+            button15.Size = new Size(30, 23);
+            button15.TabIndex = 2;
+            button15.Text = "<";
+            button15.UseVisualStyleBackColor = true;
+            button15.Click += hacia_izq;
+            // 
+            // button14
+            // 
+            button14.Location = new Point(352, 78);
+            button14.Name = "button14";
+            button14.Size = new Size(56, 23);
+            button14.TabIndex = 1;
+            button14.Text = "^";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += hacia_arriba;
+            // 
             // lienzo
             // 
             lienzo.Location = new Point(27, 39);
             lienzo.Name = "lienzo";
-            lienzo.Size = new Size(356, 221);
+            lienzo.Size = new Size(316, 221);
             lienzo.TabIndex = 0;
             lienzo.Paint += paint_de_lienzo;
+            lienzo.MouseDown += evento_raton_down;
+            lienzo.MouseMove += raton_mover;
             // 
             // button13
             // 
@@ -774,11 +825,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(708, 373);
+            ClientSize = new Size(708, 513);
             Controls.Add(tabControl1);
             Name = "Form1";
             Text = "Ventana principal";
             Load += Form1_Load;
+            KeyUp += tecla_presionada;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
@@ -878,5 +930,9 @@
         private Button button13;
         private GroupBox groupBox7;
         private Panel lienzo;
+        private Button button17;
+        private Button button16;
+        private Button button15;
+        private Button button14;
     }
 }
