@@ -179,15 +179,30 @@ namespace CSharp_WindowsForm
         Pen boligrafo;
         Point p_ini = new Point(5, 5), p_end = new Point(20, 50);
         Rectangle rect = new Rectangle(5, 5, 50, 50);
+        List<List<PointF>> trazos = new List<List<PointF>>();
+        Stack<List<PointF>> eliminados = new Stack<List<PointF>>();
         private void paint_de_lienzo(object sender, PaintEventArgs e)
         {
 
             graphics = lienzo.CreateGraphics();//inicializar el objeto Graphics
-            boligrafo = new Pen(Color.Red, 10.0f);
+            boligrafo = new Pen(Color.Red, 3.0f);
             graphics.DrawLine(boligrafo, p_ini, p_end);
             boligrafo.Color = Color.Pink;
             graphics.DrawRectangle(boligrafo, rect);
-            //graphics.DrawP
+            boligrafo.Color = Color.Black;
+            if (trazos.Count > 0)
+            {
+                foreach (List<PointF> puntos in trazos)
+                {
+                    PointF puntoAnterior = puntos.ElementAt(0);
+                    for (int i = 1; i < puntos.Count; i++)
+                    {
+                        graphics.DrawLine(boligrafo, puntoAnterior, puntos.ElementAt(i));
+                        puntoAnterior = puntos.ElementAt(i);
+                    }
+                }
+            }
+
             textBox6.Text = "REDIBUJADO";
         }
 
@@ -261,7 +276,9 @@ namespace CSharp_WindowsForm
                 case MouseButtons.Left:
                     rect.X = e.X;
                     rect.Y = e.Y;
-                    lienzo.Invalidate();
+                    //Se crea lista de puntos
+                    trazos.Add(new List<PointF>());
+                    //lienzo.Invalidate();
                     break;
                 case MouseButtons.Right:
                     break;
@@ -277,6 +294,8 @@ namespace CSharp_WindowsForm
                 case MouseButtons.Left:
                     rect.X = e.X;
                     rect.Y = e.Y;
+                    var puntos = trazos.ElementAt(trazos.Count - 1);
+                    puntos.Add(new PointF(e.X, e.Y));
                     lienzo.Invalidate();
                     break;
                 case MouseButtons.Right:
@@ -284,6 +303,22 @@ namespace CSharp_WindowsForm
                 default:
                     break;
             }
+
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            //Eliminar la última lista de trazos
+            eliminados.Push(trazos.ElementAt(trazos.Count - 1));
+            trazos.RemoveAt(trazos.Count - 1);
+            lienzo.Invalidate();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            //Reestablecer a la lista de trazos
+            trazos.Add(eliminados.Pop());
+            lienzo.Invalidate();
         }
     }
 

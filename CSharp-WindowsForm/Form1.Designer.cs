@@ -91,6 +91,7 @@
             textBox1 = new TextBox();
             label7 = new Label();
             tabPage4 = new TabPage();
+            button18 = new Button();
             groupBox7 = new GroupBox();
             button17 = new Button();
             button16 = new Button();
@@ -101,6 +102,7 @@
             button12 = new Button();
             textBox6 = new TextBox();
             button11 = new Button();
+            button19 = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -129,7 +131,7 @@
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(684, 357);
+            tabControl1.Size = new Size(684, 407);
             tabControl1.TabIndex = 0;
             tabControl1.KeyDown += tecla_presionada;
             // 
@@ -140,7 +142,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(676, 329);
+            tabPage1.Size = new Size(676, 379);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ejemplo TextBox";
             tabPage1.UseVisualStyleBackColor = true;
@@ -209,7 +211,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(676, 329);
+            tabPage2.Size = new Size(676, 379);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Estructuras de datos";
             tabPage2.UseVisualStyleBackColor = true;
@@ -454,7 +456,7 @@
             tabPage3.Controls.Add(groupBox5);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(676, 329);
+            tabPage3.Size = new Size(676, 379);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Valor-Referencia";
             tabPage3.UseVisualStyleBackColor = true;
@@ -707,6 +709,8 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(button19);
+            tabPage4.Controls.Add(button18);
             tabPage4.Controls.Add(groupBox7);
             tabPage4.Controls.Add(button13);
             tabPage4.Controls.Add(button12);
@@ -714,10 +718,20 @@
             tabPage4.Controls.Add(button11);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(676, 329);
+            tabPage4.Size = new Size(676, 379);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Otra ventana";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            button18.Location = new Point(432, 325);
+            button18.Name = "button18";
+            button18.Size = new Size(75, 23);
+            button18.TabIndex = 5;
+            button18.Text = "Deshacer";
+            button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
             // 
             // groupBox7
             // 
@@ -820,6 +834,16 @@
             button11.Text = "Abrir Form2";
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
+            // 
+            // button19
+            // 
+            button19.Location = new Point(513, 325);
+            button19.Name = "button19";
+            button19.Size = new Size(75, 23);
+            button19.TabIndex = 6;
+            button19.Text = "Rehacer";
+            button19.UseVisualStyleBackColor = true;
+            button19.Click += button19_Click;
             // 
             // Form1
             // 
@@ -934,5 +958,7 @@
         private Button button16;
         private Button button15;
         private Button button14;
+        private Button button18;
+        private Button button19;
     }
 }
